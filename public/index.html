@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Conectar WhatsApp (Embedded Signup)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 40px; }
+        button { padding: 12px 16px; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+<h1>Conectar WhatsApp ao seu consultório</h1>
+<p>Isso abrirá o login da Meta (Facebook) para autorizar o uso do seu número de WhatsApp Business na nossa plataforma.</p>
+
+<!-- defina o tenantId do médico/clinica -->
+<script>
+    const tenantId = 'clinic-123'; // troque dinamicamente conforme o usuário logado
+    function openSignup() {
+        window.location.href = `/connect?tenantId=${encodeURIComponent(tenantId)}`;
+    }
+</script>
+<button onclick="openSignup()">Conectar WhatsApp</button>
+
+<h3>Depois de conectar</h3>
+<ul>
+    <li>O webhook começa a receber mensagens/eventos para o seu tenant.</li>
+    <li>Você já consegue enviar mensagens via Cloud API.</li>
+</ul>
+
+<p>Webhook público: <code>/webhooks/meta/whatsapp</code></p>
+</body>
+</html>
